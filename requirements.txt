@@ -1,0 +1,9 @@
+requests
+datetime
+pytz
+futures
+pandas
+psycopg2
+tqdm
+nexmo
+prettytable
