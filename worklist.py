@@ -23,7 +23,7 @@ import tradetest
 
 
 class worklist():
-    max_workers = 100
+    max_workers = 4000
     def __init__(self):
         self.list = []
         self.__li = []
@@ -95,9 +95,10 @@ def stop():
 
 
 def prepare():
-    tablename = datetime.now(timezone('Asia/Shanghai')).date().strftime('%b_%d_%Y')
+    tradetest.dbname = 'stock'
+    tradetest.tablename = datetime.now(timezone('Asia/Shanghai')).date().strftime('%b_%d_%Y')
     #tablename = '\'%s\'' % tablename
-    tradetest.create_table('stock', tablename)
+    tradetest.create_table(tradetest.dbname, tradetest.tablename)
 
 
 #wl = worklist()
