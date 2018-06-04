@@ -1,4 +1,6 @@
+setuptools
 requests
+beautifulsoup4
 datetime
 pytz
 futures
