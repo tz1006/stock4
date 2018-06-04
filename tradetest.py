@@ -14,7 +14,9 @@ from pytz import timezone
 from stock import stock
 from log import log
 
+dbname = 'stock'
 password = 'admin'
+tablename = ''
 
 
 def create_db(dbname):
@@ -30,7 +32,7 @@ def create_db(dbname):
 
 
 # 在数据库'KDJ'中建立表 'test'/ TIME/ CODE/ NAME/ BS/ PRICE/ WAVE/ CLOSEWAVE/ MARKET
-def create_table(dbname, tablename):
+def create_table(dbname=dbname, tablename=tablename):
     try:
         create_db(dbname)
     except:
@@ -59,8 +61,8 @@ def fast_buy(stock):
 
 # code, name, bs, price, wave, market
 def buy_stock(stock):
-    dbname = 'stock'
-    tablename = 'test'
+    #dbname = 'stock'
+    #tablename = 'test'
     time = datetime.now(timezone('Asia/Shanghai')).strftime('%Y-%m-%d %H:%M:%S %Z')
     code = stock.code
     name = stock.name
@@ -73,8 +75,8 @@ def buy_stock(stock):
 
 
 def write_data(time, code, name, bs, price, wave):
-    dbname = 'stock'
-    tablename = 'test'
+    #dbname = 'stock'
+    #tablename = 'test'
     time = '\'%s\'' % time
     code = '\'%s\'' % code
     name =  '\'%s\'' % name
